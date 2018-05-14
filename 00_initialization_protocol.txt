@@ -1,0 +1,18 @@
+DJANGO_TEMPLATE INITIALIZATION PROTOCOL
+
+1. Keep or change the "app" name. If you want to change it:
+
+  > Change "/django_template/app/" to "/django_template/NEW_NAME/"
+
+  > In "proj/urls.py":
+     > Change "from app import urls as app_urls" to "from NEW_NAME import urls as NEW_NAME_urls
+     > Change "from app import views as app_views" to "from NEW_NAME import views as NEW_NAME_views"
+
+  > In "app/urls.py":
+     > Change "from app import views" to "from NEW_NAME import views"
+
+  > In "apps/app.py":
+     > Change "name = 'app'" to "name = 'NEW_NAME'"
+
+  > In "proj/settings.py", in INSTALLED_APPS:
+     > Change "'app'" to "'NEW_NAME'"
